@@ -1,0 +1,135 @@
+🎉 JDParty Quick Start
+=====================
+
+📦 Installing dependencies...
+🔨 Building packages...
+
+> @jdparty/shared@1.0.0 build /Users/joshua.pardhe/JDParty/packages/shared
+> tsc "--silent"
+
+error TS5023: Unknown compiler option '--silent'.
+/Users/joshua.pardhe/JDParty/packages/shared:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @jdparty/shared@1.0.0 build: `tsc "--silent"`
+Exit status 1
+
+> @jdparty/shared@1.0.0 build /Users/joshua.pardhe/JDParty/packages/shared
+> tsc
+
+
+> @jdparty/server@1.0.0 build /Users/joshua.pardhe/JDParty/packages/server
+> tsc "--silent"
+
+error TS5023: Unknown compiler option '--silent'.
+/Users/joshua.pardhe/JDParty/packages/server:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @jdparty/server@1.0.0 build: `tsc "--silent"`
+Exit status 1
+
+> @jdparty/server@1.0.0 build /Users/joshua.pardhe/JDParty/packages/server
+> tsc
+
+
+> @jdparty/pwa@1.0.0 build /Users/joshua.pardhe/JDParty/packages/pwa
+> tsc && vite build "--silent"
+
+/Users/joshua.pardhe/JDParty/packages/pwa:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @jdparty/pwa@1.0.0 build: `tsc && vite build "--silent"`
+Exit status 1
+
+> @jdparty/pwa@1.0.0 build /Users/joshua.pardhe/JDParty/packages/pwa
+> tsc && vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 139 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                0.13 kB
+dist/manifest.webmanifest         0.46 kB
+dist/index.html                   0.85 kB │ gzip:  0.46 kB
+dist/assets/index-CbbZG4LS.css   17.62 kB │ gzip:  4.13 kB
+dist/assets/index-DOLWRsHX.js   270.54 kB │ gzip: 87.71 kB │ map: 1,149.09 kB
+✓ built in 961ms
+
+PWA v0.17.5
+mode      generateSW
+precache  5 entries (282.45 KiB)
+files generated
+  dist/sw.js.map
+  dist/sw.js
+  dist/workbox-838c17be.js.map
+  dist/workbox-838c17be.js
+
+✅ Build complete!
+
+🚀 Starting JDParty in development mode...
+
+   Server: http://localhost:8080
+   PWA:    http://localhost:3000
+
+Press Ctrl+C to stop
+
+
+> jdparty@1.0.0 dev /Users/joshua.pardhe/JDParty
+> turbo run dev
+
+• Packages in scope: @jdparty/desktop, @jdparty/pwa, @jdparty/server, @jdparty/shared
+• Running dev in 4 packages
+• Remote caching disabled
+@jdparty/server:dev: cache bypass, force executing bfba0258edc9ea43
+@jdparty/pwa:dev: cache bypass, force executing 17b3e8238f3d9fe2
+@jdparty/desktop:dev: cache bypass, force executing 3074223d50d85a02
+@jdparty/shared:dev: cache bypass, force executing cdb23b37c26997e8
+@jdparty/pwa:dev: 
+@jdparty/pwa:dev: > @jdparty/pwa@1.0.0 dev /Users/joshua.pardhe/JDParty/packages/pwa
+@jdparty/pwa:dev: > vite
+@jdparty/pwa:dev: 
+@jdparty/shared:dev: 
+@jdparty/shared:dev: > @jdparty/shared@1.0.0 dev /Users/joshua.pardhe/JDParty/packages/shared
+@jdparty/shared:dev: > tsc --watch
+@jdparty/shared:dev: 
+@jdparty/server:dev: 
+@jdparty/server:dev: > @jdparty/server@1.0.0 dev /Users/joshua.pardhe/JDParty/packages/server
+@jdparty/server:dev: > tsx watch src/index.ts
+@jdparty/server:dev: 
+@jdparty/desktop:dev: 
+@jdparty/desktop:dev: > @jdparty/desktop@1.0.0 dev /Users/joshua.pardhe/JDParty/packages/desktop
+@jdparty/desktop:dev: > electron-forge start
+@jdparty/desktop:dev: 
+@jdparty/shared:dev: [2J[3J[H4:19:09 PM - Starting compilation in watch mode...
+@jdparty/shared:dev: 
+@jdparty/pwa:dev: 
+@jdparty/pwa:dev:   VITE v5.4.21  ready in 174 ms
+@jdparty/pwa:dev: 
+@jdparty/pwa:dev:   ➜  Local:   http://localhost:3000/
+@jdparty/pwa:dev:   ➜  Network: http://172.29.96.70:3000/
+@jdparty/desktop:dev: ❯ Checking your system
+@jdparty/desktop:dev: ❯ Checking package manager version
+@jdparty/shared:dev: 
+@jdparty/shared:dev: 4:19:09 PM - Found 0 errors. Watching for file changes.
+@jdparty/server:dev: /Users/joshua.pardhe/JDParty/packages/server/src/dmx/engine.ts:15
+@jdparty/server:dev: import { clampDMX } from '@jdparty/shared';
+@jdparty/server:dev:          ^
+@jdparty/server:dev: SyntaxError: The requested module '@jdparty/shared' does not provide an export named 'clampDMX'
+@jdparty/server:dev:     at #_instantiate (node:internal/modules/esm/module_job:254:21)
+@jdparty/server:dev:     at async ModuleJob.run (node:internal/modules/esm/module_job:369:5)
+@jdparty/server:dev:     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:689:26)
+@jdparty/server:dev:     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+@jdparty/server:dev: 
+@jdparty/server:dev: Node.js v24.9.0
+@jdparty/desktop:dev: ✔ Found pnpm@8.15.0
+@jdparty/desktop:dev: ✔ Checking your system
+@jdparty/desktop:dev: [?25h❯ Locating application
+@jdparty/desktop:dev: ✔ Locating application
+@jdparty/desktop:dev: ❯ Loading configuration
+@jdparty/desktop:dev: ✔ Loading configuration
+@jdparty/desktop:dev: ❯ Preparing native dependencies
+@jdparty/desktop:dev: ✔ Preparing native dependencies
+@jdparty/desktop:dev: ❯ Running generateAssets hook
+@jdparty/desktop:dev: ✔ Running generateAssets hook
+@jdparty/desktop:dev: ❯ Running preStart hook
+@jdparty/desktop:dev: ✔ Running preStart hook
+@jdparty/desktop:dev: ✔ Launched Electron app. Type rs in terminal to restart main process.
+@jdparty/desktop:dev: [?25h
+@jdparty/desktop:dev: 2025-11-10 16:19:26.017 Electron[47249:14122606] WARNING: Secure coding is automatically enabled for restorable state! However, not on all supported macOS versions of this application. Opt-in to secure coding explicitly by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState:.
+@jdparty/desktop:dev: [?25h ELIFECYCLE  Command failed.
+@jdparty/server:dev:  ELIFECYCLE  Command failed with exit code 2.

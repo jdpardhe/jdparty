@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "totalFixtures": 20,
+  "manufacturers": [
+    {
+      "name": "Chauvet",
+      "file": "manufacturers/chauvet.json",
+      "fixtureCount": 2
+    },
+    {
+      "name": "American DJ",
+      "file": "manufacturers/american-dj.json",
+      "fixtureCount": 4
+    },
+    {
+      "name": "Elation",
+      "file": "manufacturers/elation.json",
+      "fixtureCount": 2
+    },
+    {
+      "name": "Generic",
+      "file": "manufacturers/generic.json",
+      "fixtureCount": 5
+    },
+    {
+      "name": "Martin",
+      "file": "manufacturers/martin.json",
+      "fixtureCount": 2
+    },
+    {
+      "name": "Blizzard",
+      "file": "manufacturers/blizzard.json",
+      "fixtureCount": 2
+    },
+    {
+      "name": "American DJ (Additional)",
+      "file": "manufacturers/adj-megabar.json",
+      "fixtureCount": 2
+    }
+  ],
+  "categories": {
+    "par": 12,
+    "moving-head": 3,
+    "strip": 3,
+    "effect": 2,
+    "wash": 1,
+    "other": 1
+  }
+}

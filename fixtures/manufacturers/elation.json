@@ -1,0 +1,60 @@
+[
+  {
+    "id": "elation-sixpar-100",
+    "manufacturer": "Elation",
+    "model": "SIXPAR 100",
+    "shortName": "SIXPAR 100",
+    "category": "par",
+    "tags": ["led", "par", "rgbaw+uv", "6-in-1"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "8-Channel",
+        "channelCount": 8,
+        "channels": [
+          { "offset": 0, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 1, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "amber", "name": "Amber", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "generic", "name": "UV", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 7, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "elation-platinum-spot-5r",
+    "manufacturer": "Elation",
+    "model": "Platinum Spot 5R",
+    "shortName": "Plat Spot 5R",
+    "category": "moving-head",
+    "tags": ["moving-head", "spot", "gobo", "prism"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "16-Channel",
+        "channelCount": 16,
+        "channels": [
+          { "offset": 0, "type": "pan", "name": "Pan", "range": [0, 255], "default": 127 },
+          { "offset": 1, "type": "generic", "name": "Pan Fine", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "tilt", "name": "Tilt", "range": [0, 255], "default": 127 },
+          { "offset": 3, "type": "generic", "name": "Tilt Fine", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "color_wheel", "name": "Color", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "gobo", "name": "Gobo", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "generic", "name": "Gobo Rotation", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "prism", "name": "Prism", "range": [0, 255], "default": 0 },
+          { "offset": 8, "type": "generic", "name": "Prism Rotation", "range": [0, 255], "default": 0 },
+          { "offset": 9, "type": "focus", "name": "Focus", "range": [0, 255], "default": 127 },
+          { "offset": 10, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 11, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 12, "type": "generic", "name": "Control", "range": [0, 255], "default": 0 },
+          { "offset": 13, "type": "generic", "name": "Movement Macro", "range": [0, 255], "default": 0 },
+          { "offset": 14, "type": "generic", "name": "Macro Speed", "range": [0, 255], "default": 127 },
+          { "offset": 15, "type": "generic", "name": "Pan/Tilt Speed", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  }
+]

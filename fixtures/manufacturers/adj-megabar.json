@@ -1,0 +1,58 @@
+[
+  {
+    "id": "adj-mega-hexpar",
+    "manufacturer": "American DJ",
+    "model": "Mega HEX Par",
+    "shortName": "Mega HEX",
+    "category": "par",
+    "tags": ["led", "par", "rgbaw+uv", "6-in-1"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "6-Channel",
+        "channelCount": 6,
+        "channels": [
+          { "offset": 0, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 1, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "amber", "name": "Amber", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "generic", "name": "UV", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adj-wifly-bar-qsa",
+    "manufacturer": "American DJ",
+    "model": "WiFLY Bar QSA",
+    "shortName": "WiFLY Bar",
+    "category": "strip",
+    "tags": ["led", "strip", "rgba", "wireless"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "16-Channel",
+        "channelCount": 16,
+        "channels": [
+          { "offset": 0, "type": "red", "name": "Section 1 Red", "range": [0, 255], "default": 0 },
+          { "offset": 1, "type": "green", "name": "Section 1 Green", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "blue", "name": "Section 1 Blue", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "amber", "name": "Section 1 Amber", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "red", "name": "Section 2 Red", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "green", "name": "Section 2 Green", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "blue", "name": "Section 2 Blue", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "amber", "name": "Section 2 Amber", "range": [0, 255], "default": 0 },
+          { "offset": 8, "type": "red", "name": "Section 3 Red", "range": [0, 255], "default": 0 },
+          { "offset": 9, "type": "green", "name": "Section 3 Green", "range": [0, 255], "default": 0 },
+          { "offset": 10, "type": "blue", "name": "Section 3 Blue", "range": [0, 255], "default": 0 },
+          { "offset": 11, "type": "amber", "name": "Section 3 Amber", "range": [0, 255], "default": 0 },
+          { "offset": 12, "type": "red", "name": "Section 4 Red", "range": [0, 255], "default": 0 },
+          { "offset": 13, "type": "green", "name": "Section 4 Green", "range": [0, 255], "default": 0 },
+          { "offset": 14, "type": "blue", "name": "Section 4 Blue", "range": [0, 255], "default": 0 },
+          { "offset": 15, "type": "amber", "name": "Section 4 Amber", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  }
+]

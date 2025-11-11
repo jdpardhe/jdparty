@@ -1,0 +1,96 @@
+[
+  {
+    "id": "chauvet-slimpar-64-rgba",
+    "manufacturer": "Chauvet",
+    "model": "SlimPAR 64 RGBA",
+    "shortName": "SlimPAR 64",
+    "category": "par",
+    "tags": ["led", "par", "rgba", "wash"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "6-Channel",
+        "channelCount": 6,
+        "channels": [
+          {
+            "offset": 0,
+            "type": "red",
+            "name": "Red",
+            "range": [0, 255],
+            "default": 0
+          },
+          {
+            "offset": 1,
+            "type": "green",
+            "name": "Green",
+            "range": [0, 255],
+            "default": 0
+          },
+          {
+            "offset": 2,
+            "type": "blue",
+            "name": "Blue",
+            "range": [0, 255],
+            "default": 0
+          },
+          {
+            "offset": 3,
+            "type": "amber",
+            "name": "Amber",
+            "range": [0, 255],
+            "default": 0
+          },
+          {
+            "offset": 4,
+            "type": "dimmer",
+            "name": "Dimmer",
+            "range": [0, 255],
+            "default": 255
+          },
+          {
+            "offset": 5,
+            "type": "strobe",
+            "name": "Strobe",
+            "range": [0, 255],
+            "default": 0,
+            "capabilities": [
+              { "range": [0, 15], "description": "No strobe" },
+              { "range": [16, 255], "description": "Strobe slow to fast" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chauvet-intimidator-spot-355",
+    "manufacturer": "Chauvet",
+    "model": "Intimidator Spot 355",
+    "shortName": "Intim Spot 355",
+    "category": "moving-head",
+    "tags": ["moving-head", "spot", "gobo"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "14-Channel",
+        "channelCount": 14,
+        "channels": [
+          { "offset": 0, "type": "pan", "name": "Pan", "range": [0, 255], "default": 127 },
+          { "offset": 1, "type": "tilt", "name": "Tilt", "range": [0, 255], "default": 127 },
+          { "offset": 2, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 3, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "color_wheel", "name": "Color", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "gobo", "name": "Gobo", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "prism", "name": "Prism", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "focus", "name": "Focus", "range": [0, 255], "default": 127 },
+          { "offset": 8, "type": "generic", "name": "Pan Fine", "range": [0, 255], "default": 0 },
+          { "offset": 9, "type": "generic", "name": "Tilt Fine", "range": [0, 255], "default": 0 },
+          { "offset": 10, "type": "generic", "name": "Speed", "range": [0, 255], "default": 127 },
+          { "offset": 11, "type": "generic", "name": "Movement Macro", "range": [0, 255], "default": 0 },
+          { "offset": 12, "type": "generic", "name": "Movement Speed", "range": [0, 255], "default": 127 },
+          { "offset": 13, "type": "generic", "name": "Reset", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  }
+]

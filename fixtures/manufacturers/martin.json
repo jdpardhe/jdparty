@@ -1,0 +1,64 @@
+[
+  {
+    "id": "martin-rush-par-2-rgbw",
+    "manufacturer": "Martin",
+    "model": "RUSH PAR 2 RGBW",
+    "shortName": "RUSH PAR 2",
+    "category": "par",
+    "tags": ["led", "par", "rgbw", "zoom"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "8-Channel",
+        "channelCount": 8,
+        "channels": [
+          { "offset": 0, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 1, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "zoom", "name": "Zoom", "range": [0, 255], "default": 127 },
+          { "offset": 7, "type": "generic", "name": "Control", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "martin-mac-aura",
+    "manufacturer": "Martin",
+    "model": "MAC Aura",
+    "shortName": "MAC Aura",
+    "category": "wash",
+    "tags": ["led", "wash", "rgbw", "moving-head"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "Extended",
+        "channelCount": 20,
+        "channels": [
+          { "offset": 0, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 1, "type": "generic", "name": "Dimmer Fine", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "generic", "name": "Red Fine", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "generic", "name": "Green Fine", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 8, "type": "generic", "name": "Blue Fine", "range": [0, 255], "default": 0 },
+          { "offset": 9, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 10, "type": "generic", "name": "White Fine", "range": [0, 255], "default": 0 },
+          { "offset": 11, "type": "generic", "name": "CTO", "range": [0, 255], "default": 0 },
+          { "offset": 12, "type": "color_wheel", "name": "Color Wheel", "range": [0, 255], "default": 0 },
+          { "offset": 13, "type": "generic", "name": "Aura Pattern", "range": [0, 255], "default": 0 },
+          { "offset": 14, "type": "generic", "name": "Aura Pattern Rotation", "range": [0, 255], "default": 0 },
+          { "offset": 15, "type": "generic", "name": "Aura Pattern Fade", "range": [0, 255], "default": 0 },
+          { "offset": 16, "type": "pan", "name": "Pan", "range": [0, 255], "default": 127 },
+          { "offset": 17, "type": "tilt", "name": "Tilt", "range": [0, 255], "default": 127 },
+          { "offset": 18, "type": "generic", "name": "Movement Macro", "range": [0, 255], "default": 0 },
+          { "offset": 19, "type": "generic", "name": "Control", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  }
+]

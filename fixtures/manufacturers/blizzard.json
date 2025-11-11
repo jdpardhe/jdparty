@@ -1,0 +1,53 @@
+[
+  {
+    "id": "blizzard-hotbox-5-rgbaw",
+    "manufacturer": "Blizzard",
+    "model": "Hotbox 5 RGBAW",
+    "shortName": "Hotbox 5",
+    "category": "par",
+    "tags": ["led", "par", "rgbaw", "zoom"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "9-Channel",
+        "channelCount": 9,
+        "channels": [
+          { "offset": 0, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 1, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "amber", "name": "Amber", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "zoom", "name": "Zoom", "range": [0, 255], "default": 127 },
+          { "offset": 8, "type": "generic", "name": "Program", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blizzard-rocklite-rgbaw",
+    "manufacturer": "Blizzard",
+    "model": "Rocklite RGBAW",
+    "shortName": "Rocklite",
+    "category": "par",
+    "tags": ["led", "par", "rgbaw", "compact"],
+    "defaultMode": 0,
+    "modes": [
+      {
+        "name": "8-Channel",
+        "channelCount": 8,
+        "channels": [
+          { "offset": 0, "type": "dimmer", "name": "Dimmer", "range": [0, 255], "default": 255 },
+          { "offset": 1, "type": "red", "name": "Red", "range": [0, 255], "default": 0 },
+          { "offset": 2, "type": "green", "name": "Green", "range": [0, 255], "default": 0 },
+          { "offset": 3, "type": "blue", "name": "Blue", "range": [0, 255], "default": 0 },
+          { "offset": 4, "type": "amber", "name": "Amber", "range": [0, 255], "default": 0 },
+          { "offset": 5, "type": "white", "name": "White", "range": [0, 255], "default": 0 },
+          { "offset": 6, "type": "strobe", "name": "Strobe", "range": [0, 255], "default": 0 },
+          { "offset": 7, "type": "generic", "name": "Macro", "range": [0, 255], "default": 0 }
+        ]
+      }
+    ]
+  }
+]
