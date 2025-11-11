@@ -620,3 +620,52 @@
 2025-11-11T21:05:56.469088Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
 2025-11-11T21:06:07.868988Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762895167798"), AnchoredSystemPathBuf(".claude/settings.local.json")}
 2025-11-11T21:06:07.868999Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:08:33.068624Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/.env.sb-3898864a-5vBbWR")}
+2025-11-11T21:08:33.068633Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:08:33.082603Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-11-11T21:09:04.469817Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_65029_bd9d939b8bd3084f3c66ab5fe0ced1ea")}
+2025-11-11T21:09:04.469827Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:06.270553Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/192.cookie")}
+2025-11-11T21:09:06.270562Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:06.370147Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/193.cookie")}
+2025-11-11T21:09:06.370155Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:07.169952Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/195.cookie"), AnchoredSystemPathBuf(".turbo/cookies/196.cookie"), AnchoredSystemPathBuf(".turbo/cookies/194.cookie")}
+2025-11-11T21:09:07.169963Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:08.070664Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/198.cookie"), AnchoredSystemPathBuf(".turbo/cookies/197.cookie")}
+2025-11-11T21:09:08.070674Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:08.769108Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/199.cookie")}
+2025-11-11T21:09:08.769125Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:08.969020Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/pwa/vite.config.ts.timestamp-1762895348898-7d5cea317f5a1.mjs")}
+2025-11-11T21:09:08.969038Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/pwa"), path: AnchoredSystemPathBuf("packages/pwa") }}))
+2025-11-11T21:09:09.070121Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/pwa/vite.config.ts.timestamp-1762895348898-7d5cea317f5a1.mjs")}
+2025-11-11T21:09:09.070128Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/pwa"), path: AnchoredSystemPathBuf("packages/pwa") }}))
+2025-11-11T21:09:15.069756Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/200.cookie")}
+2025-11-11T21:09:15.069766Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:09:15.670482Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/pwa/vite.config.ts.timestamp-1762895355632-01a0f44efb5758.mjs")}
+2025-11-11T21:09:15.670492Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/pwa"), path: AnchoredSystemPathBuf("packages/pwa") }}))
+2025-11-11T21:09:15.770126Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/pwa/vite.config.ts.timestamp-1762895355632-01a0f44efb5758.mjs")}
+2025-11-11T21:09:15.770136Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/pwa"), path: AnchoredSystemPathBuf("packages/pwa") }}))
+2025-11-11T21:11:07.270623Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("test-getsongbpm-api.sh.tmp.42963.1762895467218"), AnchoredSystemPathBuf("test-getsongbpm-api.sh")}
+2025-11-11T21:11:07.270633Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:11:12.169953Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("test-getsongbpm-api.sh")}
+2025-11-11T21:11:12.169963Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:13:08.871568Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("test-getsongbpm-api.sh"), AnchoredSystemPathBuf("test-getsongbpm-api.sh.tmp.42963.1762895588789")}
+2025-11-11T21:13:08.871584Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:14:32.171304Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json"), AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762895672092")}
+2025-11-11T21:14:32.171315Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:22:06.473935Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json"), AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762896126356")}
+2025-11-11T21:22:06.473946Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:22:48.573918Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json"), AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762896168465")}
+2025-11-11T21:22:48.573927Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:24:36.874478Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/config/index.ts.tmp.42963.1762896276774"), AnchoredSystemPathBuf("packages/server/src/config/index.ts")}
+2025-11-11T21:24:36.874493Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:24:51.974717Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/music/spotify.ts"), AnchoredSystemPathBuf("packages/server/src/music/spotify.ts.tmp.42963.1762896291914")}
+2025-11-11T21:24:51.974731Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:25:04.975486Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/music/spotify.ts"), AnchoredSystemPathBuf("packages/server/src/music/spotify.ts.tmp.42963.1762896304868")}
+2025-11-11T21:25:04.975498Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:25:12.375041Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md.tmp.42963.1762896312303"), AnchoredSystemPathBuf("README.md")}
+2025-11-11T21:25:12.375051Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:25:20.575294Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/.env.example.tmp.42963.1762896320510"), AnchoredSystemPathBuf("packages/server/.env.example")}
+2025-11-11T21:25:20.575309Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:25:28.575642Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/tsconfig.tsbuildinfo")}
+2025-11-11T21:25:28.575652Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))

@@ -26,10 +26,6 @@ export const serverConfig = {
     ],
   },
 
-  // GetSongBPM API
-  getsongbpm: {
-    apiKey: process.env.GETSONGBPM_API_KEY || '',
-  },
 
   // DMX
   dmx: {

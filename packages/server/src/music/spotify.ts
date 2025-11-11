@@ -248,36 +248,37 @@ export class SpotifyService extends EventEmitter {
         return null;
       }
 
-      // Try GetSongBPM API
-      if (serverConfig.getsongbpm.apiKey) {
-        try {
-          const bpmData = await this.fetchFromGetSongBPM(trackInfo.name, trackInfo.artists[0]);
+      // Try ReccoBeats API (free, no auth required)
+      try {
+        const reccoData = await this.fetchFromReccoBeats(trackId);
 
-          if (bpmData) {
-            // Cache the result
-            this.cacheBPM(trackId, bpmData.tempo, bpmData.key, bpmData.mode, bpmData.time_sig, 'getsongbpm');
+        if (reccoData) {
+          const keyName = this.numberToKey(reccoData.key);
+          const modeName = reccoData.mode === 1 ? 'major' : 'minor';
 
-            const audioFeatures: SpotifyAudioFeatures = {
-              id: trackId,
-              tempo: bpmData.tempo,
-              timeSignature: bpmData.time_sig || 4,
-              key: this.keyToNumber(bpmData.key),
-              mode: bpmData.mode === 'minor' ? 0 : 1,
-              energy: 0.5,
-              danceability: 0.5,
-              valence: 0.5,
-              loudness: -5,
-              acousticness: 0.5,
-              instrumentalness: 0.5,
-            };
+          // Cache the result
+          this.cacheBPM(trackId, reccoData.tempo, keyName, modeName, 4, 'reccobeats');
 
-            console.log(`  ✅ GetSongBPM: ${audioFeatures.tempo} BPM, Key: ${bpmData.key} ${bpmData.mode}`);
-            this.emit('audioFeatures', audioFeatures);
-            return audioFeatures;
-          }
-        } catch (error: any) {
-          console.log('  ⚠️  GetSongBPM failed, trying Spotify API...', error.message);
+          const audioFeatures: SpotifyAudioFeatures = {
+            id: trackId,
+            tempo: reccoData.tempo,
+            timeSignature: 4,
+            key: reccoData.key,
+            mode: reccoData.mode,
+            energy: reccoData.energy,
+            danceability: reccoData.danceability,
+            valence: reccoData.valence,
+            loudness: reccoData.loudness,
+            acousticness: reccoData.acousticness,
+            instrumentalness: reccoData.instrumentalness,
+          };
+
+          console.log(`  ✅ ReccoBeats: ${audioFeatures.tempo} BPM, Key: ${keyName} ${modeName}, Energy: ${audioFeatures.energy}`);
+          this.emit('audioFeatures', audioFeatures);
+          return audioFeatures;
         }
+      } catch (error: any) {
+        console.log('  ⚠️  ReccoBeats failed, trying Spotify API...', error.message);
       }
 
       // Fallback to Spotify API
@@ -321,23 +322,34 @@ export class SpotifyService extends EventEmitter {
     }
   }
 
-  private async fetchFromGetSongBPM(title: string, artist: string): Promise<{
+  private async fetchFromReccoBeats(spotifyTrackId: string): Promise<{
     tempo: number;
-    key: string;
-    mode: string;
-    time_sig: number;
+    key: number;
+    mode: number;
+    energy: number;
+    danceability: number;
+    valence: number;
+    loudness: number;
+    acousticness: number;
+    instrumentalness: number;
   } | null> {
     try {
-      const url = `https://api.getsong.co/song?api_key=${serverConfig.getsongbpm.apiKey}&title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`;
+      const url = `https://api.reccobeats.com/v1/audio-features?ids=${spotifyTrackId}`;
 
       const response = await axios.get(url, { timeout: 5000 });
 
-      if (response.data?.song) {
+      if (response.data?.content && response.data.content.length > 0) {
+        const features = response.data.content[0];
         return {
-          tempo: response.data.song.tempo,
-          key: response.data.song.key || 'C',
-          mode: response.data.song.mode || 'major',
-          time_sig: response.data.song.time_sig || 4,
+          tempo: features.tempo,
+          key: features.key,
+          mode: features.mode,
+          energy: features.energy,
+          danceability: features.danceability,
+          valence: features.valence,
+          loudness: features.loudness,
+          acousticness: features.acousticness,
+          instrumentalness: features.instrumentalness,
         };
       }
 

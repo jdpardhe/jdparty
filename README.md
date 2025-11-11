@@ -84,7 +84,7 @@ JDParty/
 
 ## Credits
 
-BPM detection powered by [GetSongBPM](https://getsongbpm.com/) - The #1 source for finding BPM and musical key.
+BPM detection powered by [ReccoBeats](https://reccobeats.com/) - Free music API with audio features and recommendations.
 
 ## License
 
