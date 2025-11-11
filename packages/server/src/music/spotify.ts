@@ -209,72 +209,181 @@ export class SpotifyService extends EventEmitter {
     try {
       console.log(`  🎵 Fetching audio features for track: ${trackId}`);
 
-      // Try the audio-features endpoint first
+      // Check cache first
+      if (this.db) {
+        const cached = this.db.prepare('SELECT * FROM track_bpm_cache WHERE spotify_track_id = ?').get(trackId) as {
+          tempo_bpm: number;
+          key: string | null;
+          mode: string | null;
+          time_sig: number | null;
+          source: string;
+        } | undefined;
+
+        if (cached) {
+          console.log(`  💾 Using cached BPM: ${cached.tempo_bpm} (source: ${cached.source})`);
+
+          const audioFeatures: SpotifyAudioFeatures = {
+            id: trackId,
+            tempo: cached.tempo_bpm,
+            timeSignature: cached.time_sig || 4,
+            key: this.keyToNumber(cached.key),
+            mode: cached.mode === 'minor' ? 0 : 1,
+            energy: 0.5,
+            danceability: 0.5,
+            valence: 0.5,
+            loudness: -5,
+            acousticness: 0.5,
+            instrumentalness: 0.5,
+          };
+
+          this.emit('audioFeatures', audioFeatures);
+          return audioFeatures;
+        }
+      }
+
+      // Get track info for GetSongBPM API
+      const trackInfo = await this.getTrackInfo(trackId);
+      if (!trackInfo) {
+        console.log('  ⚠️  Could not get track info');
+        return null;
+      }
+
+      // Try GetSongBPM API
+      if (serverConfig.getsongbpm.apiKey) {
+        try {
+          const bpmData = await this.fetchFromGetSongBPM(trackInfo.name, trackInfo.artists[0]);
+
+          if (bpmData) {
+            // Cache the result
+            this.cacheBPM(trackId, bpmData.tempo, bpmData.key, bpmData.mode, bpmData.time_sig, 'getsongbpm');
+
+            const audioFeatures: SpotifyAudioFeatures = {
+              id: trackId,
+              tempo: bpmData.tempo,
+              timeSignature: bpmData.time_sig || 4,
+              key: this.keyToNumber(bpmData.key),
+              mode: bpmData.mode === 'minor' ? 0 : 1,
+              energy: 0.5,
+              danceability: 0.5,
+              valence: 0.5,
+              loudness: -5,
+              acousticness: 0.5,
+              instrumentalness: 0.5,
+            };
+
+            console.log(`  ✅ GetSongBPM: ${audioFeatures.tempo} BPM, Key: ${bpmData.key} ${bpmData.mode}`);
+            this.emit('audioFeatures', audioFeatures);
+            return audioFeatures;
+          }
+        } catch (error: any) {
+          console.log('  ⚠️  GetSongBPM failed, trying Spotify API...', error.message);
+        }
+      }
+
+      // Fallback to Spotify API
       try {
         const response = await this.api.get(`/audio-features/${trackId}`);
         const data = response.data;
 
-        if (!data || !data.tempo) {
-          console.log('  ⚠️  No audio features available for this track');
-          return null;
+        if (data && data.tempo) {
+          const keyName = this.numberToKey(data.key);
+          const modeName = data.mode === 1 ? 'major' : 'minor';
+
+          // Cache the result
+          this.cacheBPM(trackId, data.tempo, keyName, modeName, data.time_signature, 'spotify');
+
+          const audioFeatures: SpotifyAudioFeatures = {
+            id: data.id,
+            tempo: data.tempo,
+            timeSignature: data.time_signature,
+            key: data.key,
+            mode: data.mode,
+            energy: data.energy,
+            danceability: data.danceability,
+            valence: data.valence,
+            loudness: data.loudness,
+            acousticness: data.acousticness,
+            instrumentalness: data.instrumentalness,
+          };
+
+          console.log(`  ✅ Spotify audio features: ${audioFeatures.tempo} BPM`);
+          this.emit('audioFeatures', audioFeatures);
+          return audioFeatures;
         }
-
-        const audioFeatures: SpotifyAudioFeatures = {
-          id: data.id,
-          tempo: data.tempo,
-          timeSignature: data.time_signature,
-          key: data.key,
-          mode: data.mode,
-          energy: data.energy,
-          danceability: data.danceability,
-          valence: data.valence,
-          loudness: data.loudness,
-          acousticness: data.acousticness,
-          instrumentalness: data.instrumentalness,
-        };
-
-        console.log(`  ✅ Audio features: ${audioFeatures.tempo} BPM, Energy: ${audioFeatures.energy}`);
-        this.emit('audioFeatures', audioFeatures);
-        return audioFeatures;
-      } catch (audioFeaturesError: any) {
-        // If audio-features endpoint fails with 403, try audio-analysis endpoint
-        if (audioFeaturesError.response?.status === 403) {
-          console.log('  ⚠️  Audio features endpoint restricted, trying audio-analysis...');
-
-          try {
-            const analysisResponse = await this.api.get(`/audio-analysis/${trackId}`);
-            const analysis = analysisResponse.data;
-
-            if (analysis?.track?.tempo) {
-              const audioFeatures: SpotifyAudioFeatures = {
-                id: trackId,
-                tempo: analysis.track.tempo,
-                timeSignature: analysis.track.time_signature || 4,
-                key: analysis.track.key || 0,
-                mode: analysis.track.mode || 1,
-                energy: analysis.track.loudness ? Math.max(0, Math.min(1, (analysis.track.loudness + 60) / 60)) : 0.5,
-                danceability: 0.5,
-                valence: 0.5,
-                loudness: analysis.track.loudness || -5,
-                acousticness: 0.5,
-                instrumentalness: 0.5,
-              };
-
-              console.log(`  ✅ Audio analysis: ${audioFeatures.tempo} BPM`);
-              this.emit('audioFeatures', audioFeatures);
-              return audioFeatures;
-            }
-          } catch (analysisError: any) {
-            console.error('  ❌ Audio analysis also failed:', analysisError.response?.status, analysisError.response?.data || analysisError.message);
-          }
-        }
-
-        throw audioFeaturesError;
+      } catch (error: any) {
+        console.log('  ❌ Spotify audio features not available:', error.response?.status);
       }
+
+      return null;
     } catch (error: any) {
-      console.error('  ❌ Failed to fetch audio features:', error.response?.status, error.response?.data || error.message);
+      console.error('  ❌ Failed to fetch audio features:', error.message);
       return null;
     }
+  }
+
+  private async fetchFromGetSongBPM(title: string, artist: string): Promise<{
+    tempo: number;
+    key: string;
+    mode: string;
+    time_sig: number;
+  } | null> {
+    try {
+      const url = `https://api.getsong.co/song?api_key=${serverConfig.getsongbpm.apiKey}&title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`;
+
+      const response = await axios.get(url, { timeout: 5000 });
+
+      if (response.data?.song) {
+        return {
+          tempo: response.data.song.tempo,
+          key: response.data.song.key || 'C',
+          mode: response.data.song.mode || 'major',
+          time_sig: response.data.song.time_sig || 4,
+        };
+      }
+
+      return null;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  private async getTrackInfo(trackId: string): Promise<{ name: string; artists: string[] } | null> {
+    try {
+      const response = await this.api.get(`/tracks/${trackId}`);
+      return {
+        name: response.data.name,
+        artists: response.data.artists.map((a: any) => a.name),
+      };
+    } catch (error) {
+      return null;
+    }
+  }
+
+  private cacheBPM(trackId: string, tempo: number, key: string | null, mode: string | null, timeSig: number | null, source: string): void {
+    if (!this.db) return;
+
+    try {
+      this.db.prepare(`
+        INSERT OR REPLACE INTO track_bpm_cache
+        (spotify_track_id, tempo_bpm, key, mode, time_sig, source, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `).run(trackId, tempo, key, mode, timeSig, source, Date.now());
+
+      console.log(`  💾 Cached BPM for track ${trackId}`);
+    } catch (error: any) {
+      console.error('  ⚠️  Failed to cache BPM:', error.message);
+    }
+  }
+
+  private keyToNumber(key: string | null): number {
+    if (!key) return 0;
+    const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    return keys.indexOf(key.toUpperCase()) || 0;
+  }
+
+  private numberToKey(num: number): string {
+    const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    return keys[num] || 'C';
   }
 
   getCurrentPlayback(): SpotifyPlaybackState | null {

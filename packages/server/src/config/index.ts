@@ -26,6 +26,11 @@ export const serverConfig = {
     ],
   },
 
+  // GetSongBPM API
+  getsongbpm: {
+    apiKey: process.env.GETSONGBPM_API_KEY || '',
+  },
+
   // DMX
   dmx: {
     frameRate: parseInt(process.env.DMX_FRAME_RATE || '44', 10),

@@ -82,6 +82,10 @@ JDParty/
 - **v2.0**: AI scene suggestions, multi-zone
 - **v2.5**: Timeline, MIDI, visual layout
 
+## Credits
+
+BPM detection powered by [GetSongBPM](https://getsongbpm.com/) - The #1 source for finding BPM and musical key.
+
 ## License
 
 MIT © Joshua Pardhe

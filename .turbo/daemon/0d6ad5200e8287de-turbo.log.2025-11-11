@@ -604,3 +604,19 @@
 2025-11-11T21:03:04.768877Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
 2025-11-11T21:03:16.568831Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json"), AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762894996473")}
 2025-11-11T21:03:16.568843Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:03:25.768152Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762895005698"), AnchoredSystemPathBuf(".claude/settings.local.json")}
+2025-11-11T21:03:25.768170Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:04:40.669252Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/database/index.ts"), AnchoredSystemPathBuf("packages/server/src/database/index.ts.tmp.42963.1762895080586")}
+2025-11-11T21:04:40.669262Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:04:56.469207Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/.env.example.tmp.42963.1762895096400"), AnchoredSystemPathBuf("packages/server/.env.example")}
+2025-11-11T21:04:56.469219Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:05:03.268273Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/config/index.ts.tmp.42963.1762895103232"), AnchoredSystemPathBuf("packages/server/src/config/index.ts")}
+2025-11-11T21:05:03.268297Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:05:37.968685Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/src/music/spotify.ts"), AnchoredSystemPathBuf("packages/server/src/music/spotify.ts.tmp.42963.1762895137882")}
+2025-11-11T21:05:37.968696Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:05:49.068786Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md"), AnchoredSystemPathBuf("README.md.tmp.42963.1762895149005")}
+2025-11-11T21:05:49.068795Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-11-11T21:05:56.469074Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/server/tsconfig.tsbuildinfo")}
+2025-11-11T21:05:56.469088Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@jdparty/server"), path: AnchoredSystemPathBuf("packages/server") }}))
+2025-11-11T21:06:07.868988Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".claude/settings.local.json.tmp.42963.1762895167798"), AnchoredSystemPathBuf(".claude/settings.local.json")}
+2025-11-11T21:06:07.868999Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))

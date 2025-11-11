@@ -187,6 +187,19 @@ function createTables(db: DB): void {
     )
   `);
 
+  // Track BPM cache table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS track_bpm_cache (
+      spotify_track_id TEXT PRIMARY KEY,
+      tempo_bpm REAL NOT NULL,
+      key TEXT,
+      mode TEXT,
+      time_sig INTEGER,
+      source TEXT NOT NULL,
+      created_at INTEGER NOT NULL
+    )
+  `);
+
   // Create indexes
   db.exec(`
     CREATE INDEX IF NOT EXISTS idx_scenes_bpm ON scenes(bpm_min, bpm_max);
